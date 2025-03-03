@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/7d0bae665e.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="./img/portrait-young-african-american-man-with-vr-glasses_fav.png" type="image/x-icon">
+    <script defer src="./scripts/main.js"></script>
+    <script defer src="./scripts/contact.js"></script>
+    <title> Ebenezer Fosu-Kwarteng </title>
+</head>
+<body id="contact-body">
+    <div class="load_container"><div class="loader"></div></div>
+    <div class="body">
+        <div class="header">
+            <div class="title">
+                Kwagloben
+            </div>
+            <div class="menutabs">
+                <ul>
+                    <li><a id="page_a" href="index.html"><i class="fa-solid fa-house"></i> <span> Home & About</span></a></li>
+                    <li><a id="page_a" href="projects.html"><i class="fa-solid fa-diagram-project"></i> <span> Projects</span></a></li>
+                    <li class="selected"><i class="fa-solid fa-phone"></i> <span> Contact</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="main contact_main">
+            <div class="frm">
+                <h1><i class="fa-solid fa-address-card"></i> <span>Contact Me!</span></h1>
+                <form action="#">
+                    <div class="name_pho">
+                        <input type="text" placeholder="Name" autocomplete="off" required>
+                        <input type="text" placeholder="Phone Number" autocomplete="off">
+                    </div>
+                    <div class="frm-item">
+                        <input type="email" placeholder="Your Email" autocomplete="off" required>
+                    </div>
+                    <div class="frm-item">
+                        <input type="text" placeholder="Subject" autocomplete="off" required>
+                    </div>
+                    <div class="frm-item">
+                        <textarea  placeholder="Enter your message here..." autocomplete="off" rows="10" required></textarea>
+                    </div>
+                    <div class="frm-item">
+                        <button onclick="sendEmail();">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="copy-text">
+                <span>&copy; 2025 || Ebenezer Fosu-Kwarteng</span>
+                <span class="brand">Kwagloben</span>
+            </div>
+            <div class="soc">
+                <span>Follow Me On</span>
+                <div class="socials">
+                    <span><a href="https://facebook.com/kwaglogib" target="_blank"><i class="fa-brands fa-facebook"></i></a></span>
+                    <span><a href="https://t.me/kwagloben" target="_blank"><i class="fa-brands fa-telegram"></i></a></span>
+                    <span><a href="https://www.linkedin.com/in/ebenkwam" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+    (function() {
+        emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+    })();
+
+    function sendEmail() {
+        var params = {
+            from_name: "Acme",
+            to_email: "delivered@resend.dev",
+            subject: "hello world",
+            message: "<p>It works!</p>"
+        };
+
+        emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", params)
+        .then(function(response) {
+            console.log("Email sent successfully!", response);
+        }, function(error) {
+            console.log("Failed to send email", error);
+        });
+    }
+
+    sendEmail();
+</script>
+
+</body>
+</html>
